@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Makers</title>
-</head>
-<body>
-  {% for bottle in bottles_list %}
-  <div><h1>{{ bottle.maker}}</h1></div>
-  {% endfor %}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block page_content %}
+    {% for bottle in bottles_list %}
+    <div><h1>{{ bottle.maker}}</h1></div>
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+

@@ -3,8 +3,7 @@ from django.shortcuts import render, HttpResponse
 from .models import Bottle
 
 def contacts(request):
-    response = HttpResponse('<h1>Tel.: +996 312 111 111</h1>')
-    return response
+    return render(request, 'core/contacts.html')
 
 
 def about(request):
@@ -18,3 +17,6 @@ def makers_list(request):
     context['bottles_list'] = bottles_list
     html_page = render(request, 'makers.html', context)
     return html_page
+
+def our_history(request):
+    return render(request, 'our_history.html')

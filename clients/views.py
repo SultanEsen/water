@@ -6,12 +6,12 @@ from .models import Client
 
 def clients_list(request):
     context = {}
-    # SELECT * FROM Bottle
-    clients_list_ = Client.objects.all()
-    context['clients_list'] = clients_list_
-    html_page = render(request, 'clients.html', context)
-    return html_page
+    # # SELECT * FROM Bottle
+    # clients_list_ = Client.objects.all()
+    # context['clients_list'] = clients_list_
+    # html_page = render(request, 'clients.html', context)
+    # return html_page
+    context['clients_list'] = Client.objects.all()
+    return render(request, 'clients.html', context)
 
-# def clients_list(request):
-#     response = HttpResponse('<h1>test text</h1>')
-#     return response
+
