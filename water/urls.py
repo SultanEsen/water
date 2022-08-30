@@ -18,16 +18,24 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 
-from core.views import contacts, about, makers_list, our_history
-from clients.views import clients_list
+from core.views import *
+from clients.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contacts/', contacts),
     path('about/', about),
     path('makers/', makers_list),
-    path('clients/', clients_list),
-    path('our_history', our_history)
+    path('clients/', clients_list, name="client-list"),
+    path('our_history', our_history),
+    path('client/<int:id>/', client_details, name="client-details"),
+    path('client/update/<int:id>/', client_update, name="client-update"),
+    path('order/create/', create_order, name='create-order'),
+    path('order/djangoform', order_djangoform, name='order-django-form'),
+    path('orders/', orders_list, name='order-list'),
+    path('order/<int:id>/', order_details, name="order-details"),
+    path('order/update/<int:id>/', order_update, name="order-update"),
+
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -12,7 +12,8 @@ class Bottle(models.Model):
 
     orders = models.ManyToManyField(
         to=Order,
-        null=True, blank=True,
+        # null=True,
+        blank=True,
         verbose_name='Orders',
         related_name='bottles'
     )

@@ -1,0 +1,22 @@
+
+{% block page %}
+
+    <h1>Order's info</h1>
+    <div>Name: {{ order.name}}</div>
+    {% if order.contacts %}
+            <div>: {{ order.contacts }}</div>
+        {% else %}
+            <span>No contacts</span>
+    {% endif %}<br>
+    {% if order.description %}
+            <div>: {{ order.description }}</div>
+        {% else %}
+            <span>No description</span>
+    {% endif %}
+    <div>Finished: {{ order.finished }}</div>
+    <div>Created: {{ order.created_at }}</div>
+
+
+
+{% endblock %}
+

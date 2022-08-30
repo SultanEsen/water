@@ -20,3 +20,6 @@ def makers_list(request):
 
 def our_history(request):
     return render(request, 'our_history.html')
+
+
+

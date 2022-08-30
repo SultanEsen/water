@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block page %}
+
+    <h1>Client's info</h1>
+    <div>Name: {{ client.name}}</div>
+    <div>Address: {{ client.address }}</div>
+    <div>Is active client: {{ client.active}}</div>
+    <div>Photo:
+        {% if client.photo %}
+            <img src="{{ client.photo.url}}"/>
+        {% else %}
+            <span>No photo</span>
+        {% endif %}
+    </div>
+
+{% endblock %}
+

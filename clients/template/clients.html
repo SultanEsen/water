@@ -2,7 +2,7 @@
 {% block page_content %}
     {% for client in clients_list %}
     <div><h1>
-        {{ client.name}}
+        <a href="/client/{{ client.id }}"> {{ client.name }}</a>
         {% if client.photo%}
             <img height="100px" src="{{ client.photo.url}}">
         {% endif %}
