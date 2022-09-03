@@ -2,19 +2,20 @@
 {% block page %}
 
     <h1>Order's info</h1>
-    <div>Name: {{ order.name}}</div>
+    <div>Name: {{ object.name}}</div>
     {% if order.contacts %}
-            <div>: {{ order.contacts }}</div>
+            <div>Контакты: {{ object.contacts }}</div>
         {% else %}
             <span>No contacts</span>
     {% endif %}<br>
+    <div>Client: {{ object.client}}</div>
     {% if order.description %}
-            <div>: {{ order.description }}</div>
+            <div>Доп. информация: {{ object.description }}</div>
         {% else %}
             <span>No description</span>
     {% endif %}
-    <div>Finished: {{ order.finished }}</div>
-    <div>Created: {{ order.created_at }}</div>
+    <div>Finished: {{ object.finished }}</div>
+    <div>Created: {{ object.created_at }}</div>
 
 
 

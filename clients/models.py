@@ -56,7 +56,7 @@ class Order(models.Model):
     finished = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.name} - {self.contacts}'
+        return f'{self.client} - {self.contacts}'
 
     # class Meta:
     #     verbose_name = "Order"

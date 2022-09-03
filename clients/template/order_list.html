@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block page_content %}
-    {% for order in orders_list %}
+    {% for order in object_list %}
     <div><h1>
-        <a href="/order/{{ order.id }}"> {{ order.name }}</a>
+        <a href="{% url 'order-details' order.id %}"> {{ order.name }}</a>
 
     </h1></div>
     <hr>

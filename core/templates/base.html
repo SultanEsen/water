@@ -11,11 +11,12 @@
 <body>
     <div class="container">
     <nav>
-        <a href="/makers/">Производители</a>
+        <a href="/">Производители</a>
         <a href="/about/">О нас</a>
 <!--        <a href="/contacts/">Контакты</a>-->
         <a href="{% url 'client-list' %}">Наши клиенты</a>
-        <a href="{% url 'create-order' %}">Оформить заказ</a>
+        <a href="{% url 'order-list' %}">Заказы</a>
+        <a href="{% url 'order-django-form' %}">Оформить заказ</a>
         <a href="/clients/">Клиенты</a>
         <a href="/our_history">Наша история</a>
     </nav>

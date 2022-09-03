@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-
+from django.views import View
 from .models import Bottle
 
 def contacts(request):
@@ -20,6 +20,13 @@ def makers_list(request):
 
 def our_history(request):
     return render(request, 'our_history.html')
+
+
+class MyView(View):
+    # def some_method_view(self):
+    #     return HttpResponse('Hello, world')
+    def get(self, request):
+        return render(request, "about.html")
 
 
 
