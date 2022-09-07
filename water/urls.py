@@ -29,6 +29,7 @@ urlpatterns = [
     path('clients/', ClientListView.as_view(), name="client-list"),
     path('our_history', our_history),
     path('client/<int:pk>/', ClientDetailView.as_view(), name="client-details"),
+    path('client/<int:id>/order-list/', ClientOrderList.as_view(), name='client-order-list'),
     path('client/update/<int:id>/', client_update, name="client-update"),
     # path('order/create/', CreateOrderView.as_view(), name='create-order'),
     path('order/djangoform/', CreateOrderDjangoFormView.as_view(), name='order-django-form'),
@@ -36,6 +37,7 @@ urlpatterns = [
     path('order/<int:pk>/', OrderDetailView.as_view(), name="order-details"),
     path('order/update/<int:id>/', order_update, name="order-update"),
     path('test/', MyView.as_view()),
+    path('singin/', LoginView.as_view(), name='sign-in')
 
 ]
 

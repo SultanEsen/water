@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="icon" sizes="192x192" href="{%static 'logo/logo.png'%}">
 </head>
 <body>
     <div class="container">
@@ -15,7 +16,13 @@
         <a href="/about/">О нас</a>
 <!--        <a href="/contacts/">Контакты</a>-->
         <a href="{% url 'client-list' %}">Наши клиенты</a>
-        <a href="{% url 'order-list' %}">Заказы</a>
+        {% if request.user.is_staff %}
+                <a href="{% url 'order-list'%}">Все заказы</a>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'client-order-list' request.user.client.id %}">Мои заказы</a>
+            {% endif %}
+
         <a href="{% url 'order-django-form' %}">Оформить заказ</a>
         <a href="/clients/">Клиенты</a>
         <a href="/our_history">Наша история</a>

@@ -51,8 +51,8 @@ class Order(models.Model):
         auto_now=True,
     )
     description = models.TextField(null=True, blank=True)
-    name = models.CharField(max_length=255)
-    contacts = models.CharField(null=True, blank=True, max_length=255)
+    name = models.CharField(max_length=255, help_text='Enter your full name')
+    contacts = models.CharField(null=True, blank=True, max_length=255, help_text='Phone number or telegram')
     finished = models.BooleanField(default=False)
 
     def __str__(self):

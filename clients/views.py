@@ -104,9 +104,6 @@ class CreateOrderDjangoFormView(CreateView):
         return context
 
 
-
-
-
 # def orders_list(request):
 #     context = {}
     # # SELECT * FROM Bottle
@@ -152,3 +149,8 @@ def order_update(request, id):
             order_object = form.save()
     context["form"] = OrderForm(instance=order_object)
     return render(request, 'order_update.html', context)
+
+
+class ClientOrderList(ListView):
+    model = Order
+    template_name = 'order_list.html'
